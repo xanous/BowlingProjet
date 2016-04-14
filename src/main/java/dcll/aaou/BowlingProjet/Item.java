@@ -16,17 +16,17 @@ public class Item {
     /**
      * score maximum.
      */
-    private static int MAX_SCORE = 10;
+    private final int maxScore = 10;
 
     /**
      * constructeur.
      *
-     * @param firstTry  the firstTry
-     * @param secondTry the secondTry
+     * @param first  the firstTry
+     * @param second the secondTry
      */
-    public Item(int firstTry, int secondTry) {
-        this.firstTry = firstTry;
-        this.secondTry = secondTry;
+    public Item(final int first, final int second) {
+        this.firstTry = first;
+        this.secondTry = second;
     }
 
     /**
@@ -34,7 +34,7 @@ public class Item {
      *
      * @return firstTry
      */
-    public int getFirstTry() {
+    public final int getFirstTry() {
         return firstTry;
     }
 
@@ -43,7 +43,7 @@ public class Item {
      *
      * @return secondTry
      */
-    public int getSecondTry() {
+    public final int getSecondTry() {
         return secondTry;
     }
 
@@ -52,15 +52,20 @@ public class Item {
      *
      * @return firstTry + secondTry
      */
-    public int getTotalScore() {
+    public final int getTotalScore() {
         return firstTry + secondTry;
     }
 
-    public int getStatus() {
-        if (firstTry == MAX_SCORE) {
+    /**
+     * etat de la lancer.
+     *
+     * @return int
+     */
+    public final int getStatus() {
+        if (firstTry == maxScore) {
             return 2;
         }
-        if (getTotalScore() == MAX_SCORE) {
+        if (getTotalScore() == maxScore) {
             return 1;
         }
         return 0;

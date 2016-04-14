@@ -5,55 +5,24 @@ import java.util.Stack;
 /**
  * Created by root on 14/04/16.
  */
-public class SimpleStackImpl implements SimpleStack {
-
+public class Bowling {
     /**
-     * list jeu.
+     * frame maximum.
      */
-    private Stack<Item> stack = new Stack<Item>();
-
+    private final int maxFrame = 12;
     /**
-     * constructeur.
-     *
-     * @param stack list de jeu
+     * frame.
      */
-    public SimpleStackImpl(Stack<Item> stack) {
-        this.stack = stack;
-    }
-
+    private final int frame = 10;
     /**
-     * accesseur de stack.
-     *
-     * @return stack
-     */
-    public Stack<Item> getStack() {
-        return stack;
-    }
-
-    @Override
-    public boolean isEmpty() {
-        return stack.isEmpty();
-    }
-
-    @Override
-    public int getSize() {
-        return stack.size();
-    }
-
-    @Override
-    public void push(Item item) {
-        stack.add(item);
-    }
-
-    /**
-     * calculer score total.
-     *
+     * calcule le score total.
+     * @param stack une liste de jeu
      * @return int
      */
-    public int calculerScore() {
+
+
+    public final int calculerScore(final Stack<Item> stack) {
         int scoreTotal = 0;
-        final int maxFrame = 12;
-        final int frame = 10;
 
         int[] tmpScore = new int[maxFrame];
         for (int i = 0; i < maxFrame; ++i) {
